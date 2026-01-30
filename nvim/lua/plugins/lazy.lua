@@ -219,17 +219,47 @@ require("lazy").setup({
 			return {}
 		end,
 	},
-
-	-- in-editor annotations
-	-- {
-	-- 	"code-biscuits/nvim-biscuits",
-	-- 	dependencies = {
-	-- 		"nvim-treesitter/nvim-treesitter",
-	-- 	},
-	-- 	opts = {
-	-- 		-- Config goes here
-	-- 	},
-	-- },
+	{
+		"nvim-lualine/lualine.nvim",
+		dependencies = {
+			"nvim-tree/nvim-web-devicons", -- optional, for file icons
+		},
+		event = "VeryLazy",
+		opts = {
+			options = {
+				icons_enabled = true,
+				theme = "auto",
+				globalstatus = true, -- one statusline for the whole UI
+				component_separators = { left = "", right = "" },
+				section_separators = { left = "", right = "" },
+				disabled_filetypes = {
+					statusline = { "dashboard", "alpha", "starter" },
+				},
+			},
+			sections = {
+				lualine_a = { "mode" },
+				lualine_b = { "branch", "diff" },
+				lualine_c = {
+					{ "filename", path = 1 }, -- 0=name, 1=relative, 2=absolute
+				},
+				lualine_x = {
+					{ "diagnostics", sources = { "nvim_diagnostic" } },
+					"encoding",
+					"filetype",
+				},
+				lualine_y = { "progress" },
+				lualine_z = { "location" },
+			},
+			extensions = { "quickfix", "fugitive" },
+		},
+	},
+	{
+		"nvim-treesitter/nvim-treesitter-context",
+		dependencies = { "nvim-treesitter/nvim-treesitter" },
+		config = function()
+			require("treesitter-context").setup({})
+		end,
+	},
 })
 
 -- Handle persistent undo
