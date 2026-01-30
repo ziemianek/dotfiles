@@ -56,6 +56,9 @@ config.keys = {
 
 	-- CMD+Strzałka w prawo -> Skok o słowo w przód (wysyła Alt+F)
 	{ key = "RightArrow", mods = "CMD", action = act.SendKey({ key = "f", mods = "ALT" }) },
+
+	-- Enable shift+tab
+	{ key = "Tab", mods = "SHIFT", action = act.SendKey({ key = "Tab", mods = "SHIFT" }) },
 }
 
 return config
