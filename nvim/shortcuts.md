@@ -99,3 +99,10 @@ This cheatsheet provides a summary of useful Vim/Neovim commands and custom shor
 | `]d` | Go to the next diagnostic |
 | `<F2>` | Rename the symbol |
 | `<leader>ft` | Format the code (normal and visual modes) |
+
+### Markdown 
+| Keybinding | Description |
+|---|---|
+| `<leader>md` | Toggle markdown view |
+
+
