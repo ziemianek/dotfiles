@@ -1,5 +1,12 @@
 *
+
 !.gitignore
-!startship.toml
-!./nvim
-!./wezterm
+
+!starship.toml
+
+!nvim/
+!nvim/**
+
+!wezterm/
+!wezterm/**
+
