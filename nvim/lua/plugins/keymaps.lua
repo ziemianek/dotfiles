@@ -11,3 +11,6 @@ vim.keymap.set("n", "<leader>ec", ":NvimTreeCollapse<cr>")
 
 -- nvim-comment
 vim.keymap.set({ "n", "v" }, "<leader>/", ":CommentToggle<cr>")
+
+-- render markdown
+vim.keymap.set({ "n", "v" }, "<leader>md", ":RenderMarkdown toggle<cr>")
