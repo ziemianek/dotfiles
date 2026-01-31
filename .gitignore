@@ -4,6 +4,9 @@
 
 !starship.toml
 
+!aerospace/
+!aerospace/**
+
 !nvim/
 !nvim/**
 
