@@ -1,8 +1,9 @@
 add_newline = false
 
 format = """
-$os$directory$git_branch$git_status
-$character"""
+$os$directory$git_branch$git_status$python
+$character
+"""
 
 [directory]
 style = "bold cyan"
@@ -16,3 +17,9 @@ style = "bold purple"
 [character]
 success_symbol = "[❯](bold green)"
 error_symbol = "[❯](bold red)"
+
+[python]
+symbol = "󰌠 "
+style = "bold yellow"
+format = "[$symbol$virtualenv]($style)"
+
