@@ -14,7 +14,16 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
 	-- Color scheme
-	{ "catppuccin/nvim", name = "catppuccin" },
+	{
+		"catppuccin/nvim",
+		name = "catppuccin",
+		config = function()
+			require("catppuccin").setup({
+				flavour = "mocha",
+				transparent_background = true,
+			})
+		end,
+	},
 
 	-- Fuzzy finder
 	{
