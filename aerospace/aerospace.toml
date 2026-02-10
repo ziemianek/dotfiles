@@ -165,12 +165,14 @@ alt-1 = 'workspace 1'
 alt-2 = 'workspace 2'
 alt-3 = 'workspace 3'
 alt-4 = 'workspace 4'
+alt-5 = 'workspace 5'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
 alt-shift-1 = 'move-node-to-workspace 1 --focus-follows-window'
 alt-shift-2 = 'move-node-to-workspace 2 --focus-follows-window'
 alt-shift-3 = 'move-node-to-workspace 3 --focus-follows-window'
 alt-shift-4 = 'move-node-to-workspace 4 --focus-follows-window'
+alt-shift-5 = 'move-node-to-workspace 5 --focus-follows-window'
 
 # alt-tab = 'workspace-back-and-forth'
 alt-shift-tab = 'move-workspace-to-monitor --wrap-around next'
@@ -184,7 +186,6 @@ alt-shift-enter = 'mode apps'
 # alt-q = 'exec-and-forget open -a /System/Applications/QuickTime Player.app'
 # alt-w = 'exec-and-forget open -a /Applications/WezTerm.app'
 
-
 # 'service' binding mode declaration.
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
 [mode.service.binding]
@@ -193,12 +194,9 @@ r = ['flatten-workspace-tree', 'mode main'] # reset layout
 f = ['layout floating tiling', 'mode main'] # Toggle between floating and tiling layout
 backspace = ['close-all-windows-but-current', 'mode main']
 
-# [mode.apps.binding]
-# alt-w = ['exec-and-forget open -a /Applications/WezTerm.app', 'mode main']
-
 [workspace-to-monitor-force-assignment]
-1 = '^Built-in.*$'
-2 = '^DELL U.*$'
-3 = '^DELL S.*$'
-#     4 = '^dell$'
-#     5 = 'main'
+1 = 'main'
+2 = 'main'
+3 = 'main'
+4 = 'main'
+5 = 'secondary'
