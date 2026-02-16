@@ -76,6 +76,7 @@ require("lazy").setup({
 			formatters_by_ft = {
 				lua = { "stylua" },
 				python = { "black" },
+				go = { "gofmt" },
 			},
 			format_on_save = { timeout_ms = 500, lsp_fallback = true },
 		},
@@ -138,7 +139,11 @@ require("lazy").setup({
 			})
 
 			require("mason-lspconfig").setup({
-				ensure_installed = { "pyright", "lua_ls" },
+				ensure_installed = {
+					"pyright",
+					"lua_ls",
+					"gopls",
+				},
 				handlers = {
 					function(server_name)
 						lspconfig[server_name].setup({
