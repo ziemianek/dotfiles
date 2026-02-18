@@ -7,6 +7,7 @@ config.line_height = 1.2
 config.window_decorations = "RESIZE"
 config.window_background_opacity = 0.9
 config.color_scheme = "Catppuccin Mocha"
+config.harfbuzz_features = { "calt=0", "clig=0", "liga=0" }
 
 config.keys = {
 	{
