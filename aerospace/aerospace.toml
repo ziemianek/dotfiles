@@ -96,7 +96,7 @@ inner.horizontal = 10
 inner.vertical =   10
 outer.left =       10
 outer.bottom =     10
-outer.top =        [{ monitor."main" = 50 }, { monitor."secondary" = 15 }, 40] # last value is some random shit just to make it work 
+outer.top =        [{ monitor."DELL*" = 50 }, { monitor."Built*" = 15 }, 40] # last value is some random shit just to make it work 
 outer.right =      10
 
 # 'main' binding mode declaration
