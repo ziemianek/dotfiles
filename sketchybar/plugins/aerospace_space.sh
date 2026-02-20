@@ -17,17 +17,17 @@ INACTIVE_BG=0x00000000    # transparent
 
 if [ "$focused" = "$sid" ]; then
   # Animate underline
-  sketchybar --animate sin 6 --set "space_underline.$sid" background.color="$ACTIVE_UNDERLINE"
+  sketchybar --set "space_underline.$sid" background.color="$ACTIVE_UNDERLINE"
 
   # Dark background pill behind label
-  sketchybar --animate sin 6 --set "space.$sid" \
+  sketchybar --set "space.$sid" \
     background.drawing=on \
     background.color="$ACTIVE_BG" \
     background.corner_radius=6 \
     label.color=0xffffffff
 else
   # Hide underline
-  sketchybar --animate sin 6 --set "space_underline.$sid" background.color="$INACTIVE_UNDERLINE"
+  sketchybar set "space_underline.$sid" background.color="$INACTIVE_UNDERLINE"
 
   # Remove background
   sketchybar --set "space.$sid" \
