@@ -1,8 +1,3 @@
-# This is a demo config to showcase some of the most important commands.
-# It is meant to be changed and configured, as it is intentionally kept sparse.
-# For a (much) more advanced configuration example see my dotfiles:
-# https://github.com/FelixKratz/dotfiles
-
 PLUGIN_DIR="$CONFIG_DIR/plugins"
 
 ##### Bar Appearance #####
@@ -12,7 +7,7 @@ PLUGIN_DIR="$CONFIG_DIR/plugins"
 # If you are looking for other colors, see the color picker:
 # https://felixkratz.github.io/SketchyBar/config/tricks#color-picker
 
-sketchybar --bar position=top height=40 blur_radius=30 color=0x40000000
+sketchybar --bar position=top height=30 blur_radius=30 color=0x40000000
 
 ##### Changing Defaults #####
 # We now change some default values, which are applied to all further items.
@@ -45,7 +40,6 @@ sketchybar --add event aerospace_workspace_change
 for i in "${!SPACE_LABELS[@]}"; do
   sid="$((i+1))"
 
-  # The label item
   label_item=(
     icon.drawing=off
     label="${SPACE_LABELS[i]}"
@@ -53,37 +47,14 @@ for i in "${!SPACE_LABELS[@]}"; do
     label.padding_left=10
     label.padding_right=10
     label.color=0xffffffff
-
     background.drawing=off
-
     script="$PLUGIN_DIR/aerospace_space.sh"
     click_script="aerospace workspace $sid"
-  )
-
-  # The underline item (same position as label, but drawn as a small rounded bar)
-  underline_item=(
-    icon.drawing=off
-    label.drawing=off
-
-    background.drawing=on
-    background.color=0x00ffffff         # hidden by default, script will show for active
-    background.corner_radius=3
-    background.height=3                 # thickness
-    background.padding_left=10
-    background.padding_right=10
-
-    y_offset=13                         # pushes underline down under the text (tweak if needed)
-    width=0                             # let it hug content via padding
-    script="$PLUGIN_DIR/aerospace_space.sh"
   )
 
   sketchybar --add item space."$sid" left \
              --set space."$sid" "${label_item[@]}" \
              --subscribe space."$sid" aerospace_workspace_change
-
-  sketchybar --add item space_underline."$sid" left \
-             --set space_underline."$sid" "${underline_item[@]}" \
-             --subscribe space_underline."$sid" aerospace_workspace_change
 done
 
 # Initial highlight on startup
